@@ -10,3 +10,7 @@ package-lock.json
 main.js
 styles.css
 *.js.map
+
+# misc codemirror files
+*.html
+test.js
