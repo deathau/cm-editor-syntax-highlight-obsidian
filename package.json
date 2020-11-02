@@ -1,7 +1,7 @@
 {
-  "name": "cm-show-whitespace-obsidian",
-  "version": "0.1.0",
-  "description": "Show whitespace in the editor",
+  "name": "cm-editor-syntax-highlight-obsidian",
+  "version": "0.0.1",
+  "description": "Show syntax highlighing in code blocks the editor",
   "main": "main.js",
   "scripts": {
     "dev": "rollup --config rollup.config.js -w",
