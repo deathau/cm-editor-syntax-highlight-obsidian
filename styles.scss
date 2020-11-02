@@ -1,0 +1,145 @@
+.cm-s-obsidian pre.HyperMD-codeblock span.cm-formatting-code-block {
+  color: var(--text-muted);
+}
+
+.cm-s-obsidian pre.HyperMD-codeblock .cm-keyword {
+  font-weight: normal;
+}
+.cm-s-obsidian pre.HyperMD-codeblock {
+  .theme-dark &{
+/*
+
+    Name:       yoncé
+    Author:     Thomas MacLean (http://github.com/thomasmaclean)
+
+    Original yoncé color scheme by Mina Markham (https://github.com/minamarkham)
+
+*/
+
+  color: #d4d4d4;
+
+.cm-keyword {
+  color: #00A7AA;
+  font-weight: normal;
+}
+
+/**/
+.cm-atom {
+  color: #F39B35;
+}
+
+.cm-number,
+span.cm-type {
+  color: #A06FCA;
+}
+
+/**/
+.cm-def {
+  color: #98E342;
+}
+
+.cm-property,
+span.cm-variable {
+  color: #D4D4D4;
+}
+
+span.cm-variable-2 {
+  color: #da7dae;
+}
+
+span.cm-variable-3 {
+  color: #A06FCA;
+}
+
+.cm-type.cm-def {
+  color: #FC4384;
+}
+
+.cm-property.cm-def {
+  color: #FC4384;
+}
+
+.cm-callee {
+  color: #FC4384;
+}
+
+.cm-operator {
+  color: #FC4384;
+}
+
+/**/
+.cm-qualifier,
+.cm-tag {
+  color: #FC4384;
+}
+
+.cm-tag.cm-bracket {
+  color: #D4D4D4;
+}
+
+.cm-attribute {
+  color: #A06FCA;
+}
+
+.cm-comment {
+  color: #696d70;
+}
+
+/**/
+.cm-comment.cm-tag {
+  color: #FC4384
+}
+
+.cm-comment.cm-attribute {
+  color: #D4D4D4;
+}
+
+.cm-string {
+  color: #E6DB74;
+}
+
+/**/
+.cm-string-2 {
+  color: #F39B35;
+}
+
+/*?*/
+.cm-meta {
+  color: #D4D4D4;
+  background: inherit;
+}
+
+.cm-builtin {
+  color: #FC4384;
+}
+
+/*?*/
+.cm-header {
+  color: #da7dae;
+}
+
+.cm-hr {
+  color: #98E342;
+}
+
+.cm-link {
+  color: #696d70;
+}
+
+/**/
+.cm-error {
+  border-bottom: 1px solid #C42412;
+}
+
+.CodeMirror-activeline-background {
+  background: #272727;
+}
+
+.CodeMirror-matchingbracket {
+  outline: 1px solid grey;
+  color: #D4D4D4 !important;
+}
+
+
+}
+}
