@@ -23,14 +23,14 @@ From Obsidian v0.9.8, you can activate this plugin within Obsidian by doing the 
 - Open Settings > Third-party plugin
 - Make sure Safe mode is **off**
 - Click Browse community plugins
-- Search for "Show Whitespace"
+- Search for "Syntax Highlight"
 - Click Install
 - Once installed, close the community plugins window and activate the newly installed plugin
 #### Updates
 You can follow the same procedure to update the plugin
 
 ### From GitHub
-- Download the [Latest release](https://github.com/deathau/cm-show-whitespace-obsidian/releases/latest)
+- Download the [Latest release](https://github.com/deathau/cm-editor-syntax-highlight-obsidian/releases/latest)
 - Extract the `cm-editor-syntax-highlight-obsidian` folder from the zip to your vault's plugins folder: `<vault>/.obsidian/plugins/`  
 Note: On some machines the `.obsidian` folder may be hidden. On MacOS you should be able to press `Command+Shift+Dot` to show the folder in Finder.
 - Reload Obsidian
@@ -51,7 +51,7 @@ tweaks, you can do the following:
 - `npm i` or `yarn` to install dependencies
 - `npm run build` to compile.
 - Copy `manifest.json`, `main.js` and `styles.css` to a subfolder of your plugins
-folder (e.g, `<vault>/.obsidian/plugins/cm-show-whitespace-obsidian/`)
+folder (e.g, `<vault>/.obsidian/plugins/cm-editor-syntax-highlight-obsidian/`)
 - Reload obsidian to see changes
 
 Alternately, you can clone the repo directly into your plugins folder and once
