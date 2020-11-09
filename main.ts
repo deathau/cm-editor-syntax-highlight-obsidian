@@ -1,6 +1,7 @@
 import './styles.scss'
-import { Plugin } from 'obsidian'
+import { MarkdownView, Plugin } from 'obsidian'
 
+import './lib/codemirror'
 import './mode/meta'
 import './mode/apl/apl'
 import './mode/asciiarmor/asciiarmor'
@@ -125,7 +126,40 @@ import './mode/yaml-frontmatter/yaml-frontmatter'
 import './mode/z80/z80'
 
 export default class CMSyntaxHighlightPlugin extends Plugin {
-  // all I need to do is import the modes.
+
+  // these are the CodeMirror modes that Obsidian uses by default
+  modesToKeep = ["hypermd", "markdown", "null", "xml"];
+
   async onload() {
+    // wait for layout to be ready to perform the rest
+    (this.app.workspace as any).layoutReady ? this.layoutReady() : this.app.workspace.on('layout-ready', this.layoutReady);
+  }
+
+  layoutReady = () => {
+    // don't need the event handler anymore, get rid of it
+    this.app.workspace.off('layout-ready', this.layoutReady);
+    this.refreshLeaves();
+  }
+
+  onunload() {
+    // Delete all the codemirror modes, to disable the syntax highlighting
+    // except the default ones, obviously
+    for (const key in CodeMirror.modes) {
+      if (CodeMirror.modes.hasOwnProperty(key) && !this.modesToKeep.includes(key)) {
+        delete CodeMirror.modes[key];
+      }
+    }
+
+    this.refreshLeaves();
+  }
+
+  refreshLeaves = () => {
+    // iterate through all markdown leaves
+    this.app.workspace.getLeavesOfType("markdown").forEach(leaf => {
+      if (leaf.view instanceof MarkdownView && leaf.view.sourceMode && leaf.view.sourceMode.cmEditor) {
+        // re-set the editor mode to refresh the syntax highlighting
+        leaf.view.sourceMode.cmEditor.setOption("mode", leaf.view.sourceMode.cmEditor.getOption("mode"));
+      }
+    })
   }
 }
