@@ -14,3 +14,7 @@ styles.css
 # misc codemirror files
 *.html
 test.js
+
+cm-editor-syntax-highlight-obsidian.zip
+
+cm-editor-syntax-highlight-obsidian/
