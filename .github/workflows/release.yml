@@ -30,7 +30,7 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         message: 'chore: update version number ${{ github.ref }}'
-        branch: 'testaction'
+        branch: 'main'
     - name: Use Node.js
       uses: actions/setup-node@v1
       with:
