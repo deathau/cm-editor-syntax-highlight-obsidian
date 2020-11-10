@@ -1,6 +1,6 @@
 {
   "name": "cm-editor-syntax-highlight-obsidian",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Show syntax highlighing in code blocks the editor",
   "main": "main.js",
   "scripts": {
