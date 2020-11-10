@@ -66,6 +66,11 @@ much, feel free to throw some coins in my hat via
 [GitHub Sponsors](https://github.com/sponsors/deathau)
 
 # Version History
+## 0.1.0
+- Adjusted the dark codemirror theme to also apply to frontmatter
+- Reload the editor modes on load, so syntax highlighting is shown on enable
+- Delete editor modes on unload, so syntax highlighting is hidden on disable
+
 ## v0.0.1
 Initial Release.  
 Copy-pasted and imported editor modes from [CodeMirror 5.58.2](https://github.com/codemirror/CodeMirror/tree/5.58.2/mode). Got compiler errors importing `markdown` and `gfm`, so those aren't available for now.
