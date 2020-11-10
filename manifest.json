@@ -4,5 +4,5 @@
   "author": "death_au",
   "description": "Show syntax highlighing in code blocks the editor",
   "isDesktopOnly": false,
-  "version": "0.0.1"
+  "version": "refs/tags/0.1.0"
 }
