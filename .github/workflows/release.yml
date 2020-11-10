@@ -19,18 +19,6 @@ jobs:
       with:
         persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal token
         fetch-depth: 0 # otherwise, you will failed to push refs to dest repo
-    - name: Update manifest version
-      uses: deef0000dragon1/json-edit-action/@v1
-      env:
-        KEY: version
-        VALUE: ${{ github.ref }}
-        FILE: manifest.json
-    - name: Commit & Push changes
-      uses: actions-js/push@v1.2
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        message: 'chore: update version number ${{ github.ref }}'
-        branch: 'main'
     - name: Use Node.js
       uses: actions/setup-node@v1
       with:
@@ -45,6 +33,18 @@ jobs:
         zip -r ${{ env.PLUGIN_NAME }}.zip ${{ env.PLUGIN_NAME }}
         ls
         echo "::set-output name=tag_name::$(git tag --sort version:refname | tail -n 1)"
+    - name: Update manifest version
+      uses: deef0000dragon1/json-edit-action/@v1
+      env:
+        KEY: version
+        VALUE: ${{ steps.build.outputs.tag_name }}
+        FILE: manifest.json
+    - name: Commit & Push changes
+      uses: actions-js/push@v1.2
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        message: 'chore: update version number ${{ steps.build.outputs.tag_name }}'
+        branch: 'main'
     - name: Create Release
       id: create_release
       uses: actions/create-release@v1
