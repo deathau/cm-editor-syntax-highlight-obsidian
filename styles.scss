@@ -2,6 +2,7 @@
 
 @mixin codeAndFrontmatter($child) {
   #{selector.unify(".cm-hmd-frontmatter", $child)},
+  #{selector.unify(".cm-math", $child)},
   pre.HyperMD-codeblock #{$child} {
     @content;
   }
