@@ -66,6 +66,9 @@ much, feel free to throw some coins in my hat via
 [GitHub Sponsors](https://github.com/sponsors/deathau)
 
 # Version History
+## 0.1.1
+- Apply codemirror theme to latex math also
+
 ## 0.1.0
 - Adjusted the dark codemirror theme to also apply to frontmatter
 - Reload the editor modes on load, so syntax highlighting is shown on enable
