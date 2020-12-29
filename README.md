@@ -66,6 +66,9 @@ much, feel free to throw some coins in my hat via
 [GitHub Sponsors](https://github.com/sponsors/deathau)
 
 # Version History
+## 0.1.2
+- Added elixir mode (thanks to James Dalton)
+
 ## 0.1.1
 - Apply codemirror theme to latex math also
 

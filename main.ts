@@ -132,7 +132,7 @@ export default class CMSyntaxHighlightPlugin extends Plugin {
 
   async onload() {
     // wait for layout to be ready to perform the rest
-    (this.app.workspace as any).layoutReady ? this.layoutReady() : this.app.workspace.on('layout-ready', this.layoutReady);
+    this.app.workspace.layoutReady ? this.layoutReady() : this.app.workspace.on('layout-ready', this.layoutReady);
   }
 
   layoutReady = () => {
@@ -154,12 +154,7 @@ export default class CMSyntaxHighlightPlugin extends Plugin {
   }
 
   refreshLeaves = () => {
-    // iterate through all markdown leaves
-    this.app.workspace.getLeavesOfType("markdown").forEach(leaf => {
-      if (leaf.view instanceof MarkdownView && leaf.view.sourceMode && leaf.view.sourceMode.cmEditor) {
-        // re-set the editor mode to refresh the syntax highlighting
-        leaf.view.sourceMode.cmEditor.setOption("mode", leaf.view.sourceMode.cmEditor.getOption("mode"));
-      }
-    })
+    // re-set the editor mode to refresh the syntax highlighting
+    this.app.workspace.iterateCodeMirrors(cm => cm.setOption("mode", cm.getOption("mode")))
   }
 }
