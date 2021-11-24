@@ -66,6 +66,11 @@ much, feel free to throw some coins in my hat via
 [GitHub Sponsors](https://github.com/sponsors/deathau)
 
 # Version History
+## 0.1.3
+- Fixed elixir mode (sorry this took me so long to release, it was fixed AAAGES ago...)
+- Added javascript syntax highlighting for `dataviewjs` blocks (thanks @dbarenholz)
+- Added YAML syntax highlighting for `dataview` and `tracker` blocks (thanks @KjellConnelly)
+
 ## 0.1.2
 - Added elixir mode (thanks to James Dalton)
 
