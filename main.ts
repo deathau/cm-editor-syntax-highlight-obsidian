@@ -125,6 +125,7 @@ import './mode/yacas/yacas'
 import './mode/yaml/yaml'
 import './mode/yaml-frontmatter/yaml-frontmatter'
 import './mode/z80/z80'
+import './mode/1c/1c'
 
 export default class CMSyntaxHighlightPlugin extends Plugin {
 
