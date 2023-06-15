@@ -159,6 +159,7 @@
     {name: "xu", mime: "text/x-xu", mode: "mscgen", ext: ["xu"]},
     {name: "msgenny", mime: "text/x-msgenny", mode: "mscgen", ext: ["msgenny"]},
     {name: "WebAssembly", mime: "text/webassembly", mode: "wast", ext: ["wat", "wast"]},
+    {name: "1c", mime: "text/x-1c", mode: "1c", ext: ["bsl"]},
   ];
   // Ensure all modes have a mime property for backwards compatibility
   for (var i = 0; i < CodeMirror.modeInfo.length; i++) {
