@@ -15,9 +15,15 @@
     start: [
       { token: "comment",  regex: /;.*$/ },
       { token: "string",   regex: /"|'/, next: "string" },
-      { token: "number",   regex: /0(x|X)[\da-fA-F]+|[\da-fA-F]+(h|H)|\d+/ },
-      { token: "builtin",  regex: /\s*\.?\w+(:\s?)?/, sol: true },
-      { token: "variable", regex: /(d(b|w|d|q|t)(?!\w+)|res(b|w)|byte|(d|q|t|o|y|z)?word)/ },
+      { token: "keyword",  regex: /(?!\W)((a|b|c|d)(h|l)|(e|r)?(a|b|c|d)x|(e|r)?(s|b)pl?|(e|r)?(d|s)il?|(c|d|e|f|g|s)s)(?!\w)/ }, // registers
+      { token: "number",   regex: /0(x|X)[\da-fA-F]+|[\da-fA-F]+h|\d+/ },
+      { token: "tag",      regex: /(d(b|w|d|q|t)(?!\w+)|res(b|w)|byte|(d|q|t|o|y|z)?word)/ }, // type
+      { token: "builtin",  regex: /\s*\w+(?=:\s*((d(b|w|d|q|t)(?!\w+)|res(b|w)|byte|(d|q|t|o|y|z)?word)))/, sol: true }, // variable name
+      { token: "variable", regex: /section|SECTION/, sol: true },
+      { token: "builtin",  regex: /\s*\w+\s(?!.+:)/, sol: true }, // instruction
+      { token: "variable", regex: /(\w+(?!:)?)/, sol: true },     // user defined label
+      { token: "builtin",  regex: /\s*%?\w+\s?/, sol: true },     // %thing
+      { token: "variable", regex: /(\.?\w+(?!:)?)/, sol: true },  // unindented unknown
     ],
     string: [
       { regex: /"|'/, token: "string", next: "start" },
